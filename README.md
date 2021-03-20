@@ -12,3 +12,10 @@ All executables are compiled as `cargo build --release`, then modified, then run
 - Adding an extra character such as `:s/world!/hacked!` will result in an error when running `(exit code: 0xc0000005, STATUS_ACCESS_VIOLATION)`
 - Removing a character such as `%s/world!/hacke` will result in an error when running `(exit code: 0xc000007b)`
 - So far, `cargo run --release` will reveal the error codes in terminal, while running the `.exe` directly will cause an OS modal to pop up.
+
+## MacOS (Catalina)
+- When using vim, `:%s/world!/hacked` and saving will result in an executable binary that prints `hello, hacked` instead of `hello, world!`.
+- Adding an extra character such as `:s/world!/hacked!` resulted in nothing printing out and no errors being observed.
+- Removing a character such as `%s/world!/hacke` resulted in nothing printing out and no errors being observed.
+- `cargo run --release` vs running the executable resulted in the same output.
+
